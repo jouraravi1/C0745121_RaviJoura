@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Form validation</title>
+    <script type="text/javascript">
+        var divs = new Array();
+        div[0] = "errFirst";
+        div[1] = "errLast";
+        div[2] = "errEmail";
+        div[3] = "errUid";
+        div[4] = "errPassword";
+        div[5] = "errConfirm";
+
+        function validate()
+        {
+            var inputs = new Array();
+            input[0] = document.getElementById('first').value;
+            input[1] = document.getElementById('last').value;
+            input[2] = document.getElementById('email').value;
+            input[3] = document.getElementById('uid').value;
+            input[4] = document.getElementById('password').value;
+            input[5] = document.getElementById('confirm').value;
+
+            var errors = new Array();
+            errors[0] = "<span style='color:red>Please entewr your first name"
+            errors[1] = "<span style='color:red>Please entewr your last name"
+            errors[2] = "<span style='color:red>Please entewr your email"
+            errors[3] = "<span style='color:red>Please entewr your User id"
+            errors[4] = "<span style='color:red>Please entewr your Password"
+            errors[5] = "<span style='color:red>Please confirm your password"
+
+            for (i in inputs)
+            {
+                var errMessage = errors[i];
+                var div = divs[i];
+                if (input[i] == "")
+                    document.getElementById(div).innerHTML = errMessage;
+                else if (i == 2)
+                {
+                    var atpos = input[i].indexOf("@");
+                    var dotpos = input[i].lastindexOf(".");
+                    if (atpos < 1 || dotpos < atpos + 2 || dotpos >= input[i].length)
+                        document.getElementById('errEmail')
+                }
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
